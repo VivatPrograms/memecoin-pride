@@ -13,7 +13,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    cursor: url('./assets/cursor.png'), auto;
+    cursor: url('./assets/cursor.webp'), auto;
 }
 
 nav {
@@ -43,7 +43,7 @@ nav {
 }
 
 button:hover {
-    cursor: url('./assets/pointer.png'), pointer;
+    cursor: url('./assets/pointer.webp'), pointer;
 }
 
 .hero {
