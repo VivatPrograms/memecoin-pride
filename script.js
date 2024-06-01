@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Background image follows the mouse movement, centered
+    document.addEventListener('mousemove', function(e) {
+        const moveX = (e.clientX - window.innerWidth / 2) / 200; // Adjust the divisor for more/less movement
+        const moveY = (e.clientY - window.innerHeight / 2) / 200; // Adjust the divisor for more/less movement
+        document.body.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+    });
+
     // Prevent context menu on images
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('contextmenu', function(e) {
