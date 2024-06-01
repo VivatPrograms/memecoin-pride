@@ -64,6 +64,13 @@ button:hover {
     overflow: hidden;
 }
 
+.main-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .button {
     display: inline-block;
     width: 50px;
