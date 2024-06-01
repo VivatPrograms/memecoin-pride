@@ -57,11 +57,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
-        const sound = new Audio('./assets/sound.mp3');
+        const sound1 = new Audio('./assets/sound1.mp3');
+        const sound2 = new Audio('./assets/sound2.mp3');
 
         const handlePress = () => {
             const img = button.querySelector('img');
             img.style.opacity = '0.75';
+
+            const sound = Math.random() < 0.5 ? sound1 : sound2;
             sound.pause();
             sound.currentTime = 0;
             sound.play();
