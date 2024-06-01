@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let startIndex = getRandomStartingColorIndex();
     const letters = logo.textContent.split('');
     logo.innerHTML = '';
-    const spans = letters.map((letter, index) => {
+    const logoSpans = letters.map((letter, index) => {
         const span = document.createElement('span');
         const colorIndex = (startIndex + index) % colors.length;
         span.style.color = colors[colorIndex];
@@ -45,15 +45,43 @@ document.addEventListener("DOMContentLoaded", function() {
         return span;
     });
 
-    function updateColors() {
+    function updateLogoColors() {
         startIndex = (startIndex + 1) % colors.length;
-        spans.forEach((span, index) => {
+        logoSpans.forEach((span, index) => {
             const colorIndex = (startIndex + index) % colors.length;
             span.style.color = colors[colorIndex];
         });
     }
 
-    setInterval(updateColors, 100);
+    setInterval(updateLogoColors, 100);
+
+    // Additional code to change colors for main-header
+    const mainHeaderElements = document.querySelectorAll('.main-header');
+    const mainHeaderSpans = [];
+
+    mainHeaderElements.forEach(element => {
+        const headerLetters = element.textContent.split('');
+        element.innerHTML = '';
+        const spans = headerLetters.map((letter, index) => {
+            const span = document.createElement('span');
+            const colorIndex = (startIndex + index) % colors.length;
+            span.style.color = colors[colorIndex];
+            span.textContent = letter;
+            element.appendChild(span);
+            return span;
+        });
+        mainHeaderSpans.push(...spans);
+    });
+
+    function updateMainHeaderColors() {
+        startIndex = (startIndex + 1) % colors.length;
+        mainHeaderSpans.forEach((span, index) => {
+            const colorIndex = (startIndex + index) % colors.length;
+            span.style.color = colors[colorIndex];
+        });
+    }
+
+    setInterval(updateMainHeaderColors, 200); // Slower interval for main-header
 
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
