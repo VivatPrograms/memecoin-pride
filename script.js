@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const handlePress = () => {
             const img = button.querySelector('img');
             img.style.opacity = '0.75';
+            sound.pause();
             sound.currentTime = 0;
             sound.play();
         };
@@ -62,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const handleRelease = () => {
             const img = button.querySelector('img');
             img.style.opacity = '1';
-            sound.pause();
-            sound.currentTime = 0;
         };
 
         button.addEventListener('mousedown', handlePress);
