@@ -50,25 +50,18 @@ button:hover {
     height: 90vh;
 }
 
-/* .main-header {
+.main-header {
     size: 100%;
     font-size: 5vh;
     padding: 2%;
     height: 10vh;
     align-items: center;
     text-align: center;
-} */
+}
 
 .hero-container {
     display: flex;
     overflow: hidden;
-}
-
-.main-header {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .button {
