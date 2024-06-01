@@ -48,20 +48,26 @@ button:hover {
 
 .hero {
     height: 90vh;
+    position: relative;
 }
 
 .main-header {
-    size: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 5vh;
     padding: 2%;
     height: 10vh;
     align-items: center;
     text-align: center;
+    z-index: 3; /* Ensure it is above other content */
 }
 
 .hero-container {
     display: flex;
     overflow: hidden;
+    height: 100%; /* Ensure it takes full height */
 }
 
 .button {
@@ -79,8 +85,6 @@ button:hover {
     font-size: 2.5rem;
 }
 
-
-
 .sus-cats-image {
     width: 200%;
     height: auto;
@@ -96,8 +100,6 @@ button:hover {
     height: auto;
     margin-left: -15vw;
 }
-
-
 
 .sus-cats-button {
     display: flex;
